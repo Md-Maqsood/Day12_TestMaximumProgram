@@ -28,4 +28,12 @@ public class TestMaximumTest {
 		Integer maxInt=testMax.testMaximum(a,b,c);
 		Assert.assertEquals(c,maxInt);
 	}
+	
+	@Test
+	public void givenMaxFloatNumberAtPositionOne_ShouldReturnTheSameNumber() {
+		TestMaximum testMax=new TestMaximum();
+		Float a=2.5f, b=1.0f, c=1.5f;
+		Float maxFloat=testMax.testMaximum(a,b,c);
+		Assert.assertEquals(a,maxFloat);
+	}
 }

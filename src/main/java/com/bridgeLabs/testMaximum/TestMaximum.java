@@ -20,6 +20,20 @@ public class TestMaximum {
 		return maxInt;
 	}
 	
+	public Float testMaximum(Float a, Float b, Float c) {
+		Float maxFloat=0.0f;
+		if(a.compareTo(maxFloat)>0) {
+			maxFloat=a;
+		}
+		if(b.compareTo(maxFloat)>0) {
+			maxFloat=b;
+		}
+		if(c.compareTo(maxFloat)>0) {
+			maxFloat=c;
+		}
+		return maxFloat;
+	}
+	
 	public static void main(String[] args) {
 		TestMaximum testMax=new TestMaximum();
 		Integer a=10, b=20, c=15;
