@@ -68,4 +68,12 @@ public class TestMaximumTest {
 		String maxString = testMax.testMaximum(a, b, c);
 		Assert.assertEquals(b, maxString);
 	}
+	
+	@Test
+	public void givenMaxStringAtPositionThree_ShouldReturnTheSameString() {
+		TestMaximum testMax = new TestMaximum();
+		String a = "Banana", b = "Apple", c = "Peach";
+		String maxString = testMax.testMaximum(a, b, c);
+		Assert.assertEquals(c, maxString);
+	}
 }
