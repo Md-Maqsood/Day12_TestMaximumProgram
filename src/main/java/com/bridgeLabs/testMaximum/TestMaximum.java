@@ -6,37 +6,15 @@ import org.apache.logging.log4j.Logger;
 public class TestMaximum {
 	private static Logger logger = LogManager.getLogger(TestMaximum.class);
 
-	public Integer testMaximum(Integer a, Integer b, Integer c) {
-		Integer maxInt = a;
-		if (b.compareTo(maxInt) > 0) {
-			maxInt = b;
+	public <T extends Comparable<T>> T testMaximum(T a, T b, T c) {
+		T max = a;
+		if (b.compareTo(max) > 0) {
+			max = b;
 		}
-		if (c.compareTo(maxInt) > 0) {
-			maxInt = c;
+		if (c.compareTo(max) > 0) {
+			max = c;
 		}
-		return maxInt;
-	}
-
-	public Float testMaximum(Float a, Float b, Float c) {
-		Float maxFloat = a;
-		if (b.compareTo(maxFloat) > 0) {
-			maxFloat = b;
-		}
-		if (c.compareTo(maxFloat) > 0) {
-			maxFloat = c;
-		}
-		return maxFloat;
-	}
-
-	public String testMaximum(String a, String b, String c) {
-		String maxString = a;
-		if (b.compareTo(maxString) > 0) {
-			maxString = b;
-		}
-		if (c.compareTo(maxString) > 0) {
-			maxString = c;
-		}
-		return maxString;
+		return max;
 	}
 
 	public static void main(String[] args) {
