@@ -20,4 +20,12 @@ public class TestMaximumTest {
 		Integer maxInt=testMax.testMaximum(a,b,c);
 		Assert.assertEquals(b,maxInt);
 	}
+	
+	@Test
+	public void givenMaxIntegerNumberAtPositionThree_ShouldReturnTheSameNumber() {
+		TestMaximum testMax=new TestMaximum();
+		Integer a=10, b=15, c=20;
+		Integer maxInt=testMax.testMaximum(a,b,c);
+		Assert.assertEquals(c,maxInt);
+	}
 }

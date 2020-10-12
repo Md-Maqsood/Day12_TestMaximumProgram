@@ -19,4 +19,11 @@ public class TestMaximum {
 		}
 		return maxInt;
 	}
+	
+	public static void main(String[] args) {
+		TestMaximum testMax=new TestMaximum();
+		Integer a=10, b=20, c=15;
+		Integer maxInt=testMax.testMaximum(a, b, c);
+		logger.debug("The maximum integer in "+a+", "+b+", "+c+" is "+maxInt);
+	}
 }
