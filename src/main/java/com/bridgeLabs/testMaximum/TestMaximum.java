@@ -3,10 +3,22 @@ package com.bridgeLabs.testMaximum;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class TestMaximum {
+public class TestMaximum<T extends Comparable<T>> {
 	private static Logger logger = LogManager.getLogger(TestMaximum.class);
+	T a, b, c;
 
-	public <T extends Comparable<T>> T testMaximum(T a, T b, T c) {
+	public TestMaximum(T a, T b, T c) {
+		super();
+		this.a = a;
+		this.b = b;
+		this.c = c;
+	}
+	
+	public T testMaximum() {
+		return TestMaximum.testMaximum(a, b, c);
+	}
+
+	public static <T extends Comparable<T>> T testMaximum(T a, T b, T c) {
 		T max = a;
 		if (b.compareTo(max) > 0) {
 			max = b;
@@ -18,9 +30,8 @@ public class TestMaximum {
 	}
 
 	public static void main(String[] args) {
-		TestMaximum testMax = new TestMaximum();
-		Integer a = 10, b = 20, c = 15;
-		Integer maxInt = testMax.testMaximum(a, b, c);
-		logger.debug("The maximum integer in " + a + ", " + b + ", " + c + " is " + maxInt);
+		Integer a=10, b=20, c=15;
+		TestMaximum<Integer> testMax=new TestMaximum<Integer>(a, b, c);
+		logger.debug("The maximum in "+a+", "+b+" and "+c+" is "+testMax.testMaximum());
 	}
 }
