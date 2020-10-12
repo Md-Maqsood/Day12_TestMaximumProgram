@@ -52,12 +52,20 @@ public class TestMaximumTest {
 		Float maxFloat = testMax.testMaximum(a, b, c);
 		Assert.assertEquals(c, maxFloat);
 	}
-	
+
 	@Test
 	public void givenMaxStringAtPositionOne_ShouldReturnTheSameString() {
 		TestMaximum testMax = new TestMaximum();
-		String a = "Peach" , b = "Banana", c = "Apple";
+		String a = "Peach", b = "Banana", c = "Apple";
 		String maxString = testMax.testMaximum(a, b, c);
 		Assert.assertEquals(a, maxString);
+	}
+
+	@Test
+	public void givenMaxStringAtPositionTwo_ShouldReturnTheSameString() {
+		TestMaximum testMax = new TestMaximum();
+		String a = "Banana", b = "Peach", c = "Apple";
+		String maxString = testMax.testMaximum(a, b, c);
+		Assert.assertEquals(b, maxString);
 	}
 }
