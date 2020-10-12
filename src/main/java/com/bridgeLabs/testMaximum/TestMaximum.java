@@ -16,7 +16,9 @@ public class TestMaximum<T extends Comparable<T>> {
 	}
 
 	public T testMaximum() {
-		return TestMaximum.testMaximum(values);
+		T max = TestMaximum.testMaximum(values);
+		printMax(values, max);
+		return max;
 	}
 
 	public static <T extends Comparable<T>> T testMaximum(List<T> values) {
@@ -24,9 +26,18 @@ public class TestMaximum<T extends Comparable<T>> {
 		return max;
 	}
 
+	public static <T> void printMax(List<T> values, T max) {
+		logger.debug("The maximum of [");
+		values.forEach(value -> logger.debug(value + ", "));
+		logger.debug("] is " + max + "\n");
+	}
+
 	public static void main(String[] args) {
-		Integer a = 10, b = 20, c = 15, d = 22;
-		TestMaximum<Integer> testMax = new TestMaximum<Integer>(a, b, c, d);
-		logger.debug("The maximum in " + a + ", " + b + ", " + c + " and " + d + " is " + testMax.testMaximum());
+		Integer aInt = 10, bInt = 20, cInt = 15, dInt = 22;
+		Float afloat = 2.5f, bfloat = 1.0f, cfloat = 1.5f, dfloat = 2.0f;
+		String aString = "Peach", bString = "Banana", cString = "Apple", dString = "Mango";
+		new TestMaximum<Float>(afloat, bfloat, cfloat, dfloat).testMaximum();
+		new TestMaximum<String>(aString, bString, cString, dString).testMaximum();
+		new TestMaximum<Integer>(aInt, bInt, cInt, dInt).testMaximum();
 	}
 }
