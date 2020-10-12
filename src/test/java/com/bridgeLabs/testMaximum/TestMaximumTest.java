@@ -68,12 +68,36 @@ public class TestMaximumTest {
 		String maxString = testMax.testMaximum();
 		Assert.assertEquals(b, maxString);
 	}
-	
+
 	@Test
 	public void givenMaxStringAtPositionThree_ShouldReturnTheSameString() {
 		String a = "Banana", b = "Apple", c = "Peach";
 		TestMaximum<String> testMax = new TestMaximum<String>(a, b, c);
 		String maxString = testMax.testMaximum();
 		Assert.assertEquals(c, maxString);
+	}
+
+	@Test
+	public void givenMultipleIntegers_WithMaxIntegerNumberAtPositionOne_ShouldReturnTheSameNumber() {
+		Integer a = 25, b = 10, c = 15, d = 20, e = 18, f = 23;
+		TestMaximum<Integer> testMax = new TestMaximum<Integer>(a, b, c, d, e, f);
+		Integer maxInt = testMax.testMaximum();
+		Assert.assertEquals(a, maxInt);
+	}
+
+	@Test
+	public void givenMultipleFloats_WithMaxFloatNumberAtPositionOne_ShouldReturnTheSameNumber() {
+		Float a = 2.5f, b = 1.0f, c = 1.5f, d = 2.0f, e = 1.8f, f = 2.3f;
+		TestMaximum<Float> testMax = new TestMaximum<Float>(a, b, c, d, e, f);
+		Float maxFloat = testMax.testMaximum();
+		Assert.assertEquals(a, maxFloat);
+	}
+
+	@Test
+	public void givenMultipleStrings_WithMaxStringAtPositionOne_ShouldReturnTheSameString() {
+		String a = "Peach", b = "Banana", c = "Apple", d = "Mango", e = "Guava", f = "Orange";
+		TestMaximum<String> testMax = new TestMaximum<String>(a, b, c, d, e, f);
+		String maxString = testMax.testMaximum();
+		Assert.assertEquals(a, maxString);
 	}
 }
