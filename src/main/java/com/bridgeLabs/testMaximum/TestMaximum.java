@@ -7,10 +7,7 @@ public class TestMaximum {
 	private static Logger logger=LogManager.getLogger(TestMaximum.class);
 
 	public Integer testMaximum(Integer a, Integer b, Integer c) {
-		Integer maxInt=0;
-		if(a.compareTo(maxInt)>0) {
-			maxInt=a;
-		}
+		Integer maxInt=a;
 		if(b.compareTo(maxInt)>0) {
 			maxInt=b;
 		}
@@ -21,10 +18,7 @@ public class TestMaximum {
 	}
 	
 	public Float testMaximum(Float a, Float b, Float c) {
-		Float maxFloat=0.0f;
-		if(a.compareTo(maxFloat)>0) {
-			maxFloat=a;
-		}
+		Float maxFloat=a;
 		if(b.compareTo(maxFloat)>0) {
 			maxFloat=b;
 		}
@@ -32,6 +26,17 @@ public class TestMaximum {
 			maxFloat=c;
 		}
 		return maxFloat;
+	}
+	
+	public String testMaximum(String a, String b, String c) {
+		String maxString=a;
+		if(b.compareTo(maxString)>0) {
+			maxString=b;
+		}
+		if(c.compareTo(maxString)>0) {
+			maxString=c;
+		}
+		return maxString;
 	}
 	
 	public static void main(String[] args) {
